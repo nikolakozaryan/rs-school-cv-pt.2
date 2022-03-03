@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,400&family=Quicksand:wght@300;400;700&display=swap');
+
+$main-accent-color: #2AA891;
+$main-text-color: #343434;
+$second-text-color: #fff;
+$main-heading-font: 500 96px 'Montserrat', sans-serif;
+$second-heading-font: 500 50px 'Montserrat', sans-serif;
+$third-heading-font: 300 24px 'Montserrat', sans-serif;
+$nav-font: 700 16px 'Montserrat', sans-serif;
+$contacts-font: 400 14px 'Montserrat', sans-serif;
+$main-font: 400 20px 'Montserrat', sans-serif;
+
+* {
+    box-sizing: border-box;
+}
+
+h2 {
+    font: $second-heading-font;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding-right: 230px;
+    line-height: 100%;
+    color: $second-text-color;
+}
+
+body {
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px 5px #929292;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+    color: $main-text-color;
+    transition: .5s;
+    &:hover {
+        color: $main-accent-color;
+    }
+}
+
+header {
+    height: 555px;
+    display: flex;
+}
+
+.contacts-icon {
+    margin: 0 30px 0 15px;
+    width: 20px;
+    height: 20px;
+    fill: $second-text-color;
+    transition: .5s;
+}
+
+.profile-picture {
+    width: 355px;
+    height: 100%;
+    border: 2px solid $main-accent-color;
+    background-color: $main-accent-color;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: -355px;
+        left: -2px;
+        width: 0;
+        height: 0;
+        border-left: 177.5px solid $main-accent-color;
+        border-right: 177.5px solid transparent;
+        border-bottom: 177.5px solid transparent;;
+        border-top: 177.5px solid $main-accent-color;
+        clear: both;
+        z-index: 1;
+    }
+}
+
+.header-content {
+    height: 100%;
+    width: 1200px - 355px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: space-between;
+    & > * {
+        padding: 10px;
+    }
+    & .main-information {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: auto;
+        & {
+            h1 {
+                font: $main-heading-font;
+            }
+            p {
+                padding: 10px 15px;
+                line-height: 100%;
+                margin-top: 36px;
+                font: $third-heading-font;
+                color: $second-text-color;
+                background-color: black;
+                box-shadow: 0 5px 3px black;
+            }
+        }
+    }
+    & .contacts {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        height: 428px;
+        width: 300px;
+        &::before {
+            top: 0;
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background-color: black;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            margin: 20px 0;
+            &:hover {
+                .contacts-icon {
+                    fill: $main-accent-color;
+                }
+                & a {
+                    color: $main-accent-color;
+                }
+            }
+        }
+        a {
+            font: $contacts-font;
+        }
+    }
+    & .navigation {
+        padding: 0;
+        border-top: 1px solid $main-text-color;
+        border-bottom: 1px solid $main-text-color;
+        min-height: 50px;
+        width: 100%;
+        nav {
+            padding: 15px 10px;
+            height:100%;
+            width: 100%;
+        }
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            font: $nav-font;
+            padding: 5px;
+            line-height: 20px;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    * {
+        font: $main-font;
+    }
+}
+
+main {
+    width: 75%;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 280px;
+        height: 100%;
+        background-color: black;
+    }
+}
+
+section {
+    display: flex;
+}
+
+.section-wrapper {
+    flex-grow: 1;
+    display: flex;
+    padding: 30px;
+    * {
+        font: $main-font;
+    }
+}
+
+aside {
+    width: 25%;
+}
